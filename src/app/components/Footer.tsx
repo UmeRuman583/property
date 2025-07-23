@@ -17,21 +17,21 @@ const Footer = () => {
         <div>
           <h2 className="text-2xl font-bold text-yellow-500 mb-4">Trust Property Keys</h2>
           <p className="text-gray-600 mb-4">
-            Managing your property with care and excellence.
+            {"Managing your property with care and excellence."}
           </p>
-          <p className="text-gray-600">Call: <span className="text-yellow-500">(510) 459-0964</span></p>
-          <p className="text-gray-600">Email: <span className="text-yellow-500">info@trustpropertykeys.com</span></p>
+          <p className="text-gray-600">{"Call: "} <span className="text-yellow-500">(510) 459-0964</span></p>
+          <p className="text-gray-600">{"Email: "} <span className="text-yellow-500">info@trustpropertykeys.com</span></p>
         </div>
 
         {/* Column 2 - Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4 text-yellow-500">Quick Links</h3>
-          <ul className="space-y-2 ">
+          <ul className="space-y-2">
             {[
-              { label: 'How It Works', id: 'how-it-works' },
-              { label: 'About Us', id: 'about-us' },
-              { label: 'For Homeowners', id: 'for-homeowners' },
-              { label: 'For Residents', id: 'for-residents' },
+              { label: "How It Works", id: "how-it-works" },
+              { label: "About Us", id: "about-us" },
+              { label: "For Homeowners", id: "for-homeowners" },
+              { label: "For Residents", id: "for-residents" },
             ].map((link, index) => (
               <li key={index}>
                 <button
@@ -50,9 +50,8 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4 text-yellow-500">Support</h3>
           <ul className="space-y-2">
             {[
-              { label: 'Help & FAQs', id: 'help-faqs' },
-                            { label: 'Testimonials', id: 'testimonials' },
-
+              { label: "Help & FAQs", id: "help-faqs" },
+              { label: "Testimonials", id: "testimonials" },
             ].map((link, index) => (
               <li key={index}>
                 <button
@@ -70,7 +69,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-4">
-            Have questions? We’re here to help.
+            {"Have questions? We're here to help."}
           </p>
           <button
             onClick={() => scrollToSection('contact')}
@@ -83,7 +82,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="mt-6 border-t border-gray-300 pt-4 text-center text-blue-900 text-sm">
-        © {new Date().getFullYear()} Trust Property Keys. All rights reserved.
+        © {new Date().getFullYear()} Trust Property Keys. {"All rights reserved."}
       </div>
     </footer>
   );

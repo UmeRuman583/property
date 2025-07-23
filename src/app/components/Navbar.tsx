@@ -1,26 +1,33 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const links = [
-  { label: 'HOW IT WORKS', href: '#how-it-works' },
-  { label: 'FOR HOMEOWNERS', href: '#for-homeowners' },
-  { label: 'FOR RESIDENTS', href: '#for-residents' },
-  { label: 'CONTACT US', href: '#contact' },
+  { label: 'HOW IT WORKS', href: 'how-it-works' },
+  { label: 'FOR HOMEOWNERS', href: 'for-homeowners' },
+  { label: 'FOR RESIDENTS', href: 'for-residents' },
+  { label: 'CONTACT US', href: 'contact' },
 ]
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      setOpen(false)
+    }
+  }
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center ml-15">
+        <div className="flex items-center ml-4">
           <Image
-            src="/logo1.svg" // ✅ Put your logo in public folder as /public/logo.png
+            src="/logo1.svg"
             alt="Logo"
             width={100}
             height={60}
@@ -31,13 +38,13 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 font-bold">
           {links.map(link => (
-            <Link
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => scrollToSection(link.href)}
               className="text-gray-700 hover:text-yellow-500 transition-colors"
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -51,7 +58,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Sidebar Menu on Small Screens */}
+      {/* Sidebar Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
           open ? 'translate-x-0' : 'translate-x-full'
@@ -69,14 +76,13 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col px-4 py-4 space-y-4 font-medium">
           {links.map(link => (
-            <Link
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => scrollToSection(link.href)}
               className="text-gray-700 hover:text-yellow-500"
-              onClick={() => setOpen(false)}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </div>
       </div>

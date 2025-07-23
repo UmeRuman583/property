@@ -6,17 +6,15 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: 'What services are included?',
-    answer:'Trust Property Keys offers a one-stop-shop for all your home management needs including: • Preparing your home for future residents by conducting an inspection and addressing maintenance and repairs. • Marketing and showcasing your home with professional photography, virtual walkthroughs, open houses, and full-service tours. What sets us apart is that we offer these tours at no extra cost to homeowners. This flexibility ensures that we reach a wider pool of potential residents, making the process efficient and hassle-free. • Distributing the listing on multiple websites including Zillow, Apartments.com, Craigslist, Trulia, Zumper and Hotpads. Additionally, we list the home in its best light on our website that receives thousands of visitors a month - a true competitive advantage. • Screening and placing residents through our thorough vetting and background check process. • Managing the resident relationship, including rent collection, home visits, and fostering community connections. - you will not need to worry about dealing with Residents directly. Our Member Service Team will ensure both you and your Resident have everything needed. • Providing long-term care and handling maintenance, including 24/7 emergency service'
+    answer: 'Trust Property Keys offers a one-stop-shop for all your home management needs including: • Preparing your home for future residents by conducting an inspection and addressing maintenance and repairs. • Marketing and showcasing your home with professional photography, virtual walkthroughs, open houses, and full-service tours. What sets us apart is that we offer these tours at no extra cost to homeowners. This flexibility ensures that we reach a wider pool of potential residents, making the process efficient and hassle-free. • Distributing the listing on multiple websites including Zillow, Apartments.com, Craigslist, Trulia, Zumper and Hotpads. Additionally, we list the home in its best light on our website that receives thousands of visitors a month - a true competitive advantage. • Screening and placing residents through our thorough vetting and background check process. • Managing the resident relationship, including rent collection, home visits, and fostering community connections - you will not need to worry about dealing with Residents directly. Our Member Service Team will ensure both you and your Resident have everything needed. • Providing long-term care and handling maintenance, including 24/7 emergency service'
   },
   {
     question: 'How fast do I get paid? When will you list my home?',
-    answer:
-      'Payments are processed promptly once tenants are settled. We typically list your home within 24–48 hours of receiving your details.',
+    answer: 'Payments are processed promptly once tenants are settled. We typically list your home within 24–48 hours of receiving your details.',
   },
   {
     question: 'When can I see the home?',
-    answer:
-      'Viewings can be scheduled at your convenience. Just contact us and we’ll set up a time that works best for you.',
+    answer: 'Viewings can be scheduled at your convenience. Just contact us and we&apos;ll set up a time that works best for you.',
   },
 ];
 
@@ -48,17 +46,15 @@ const FAQSection = () => {
               key={index}
               className="bg-white rounded-xl shadow-md border border-gray-200"
             >
-           <button
-  onClick={() => toggleFAQ(index)}
-  className="w-full flex justify-between items-center text-left text-xl font-semibold px-6 py-4 bg-yellow-50 text-blue-900"
->
-  {faq.question}
-  <ChevronDown
-    className={`transition-transform duration-300 ${
-      openIndex === index ? 'rotate-180' : ''
-    }`}
-  />
-</button>
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center text-left text-xl font-semibold px-6 py-4 bg-yellow-50 text-blue-900"
+              >
+                {faq.question}
+                <ChevronDown
+                  className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                />
+              </button>
               <AnimatePresence initial={false}>
                 {openIndex === index && (
                   <motion.div
@@ -82,7 +78,7 @@ const FAQSection = () => {
             Still have questions?
           </h4>
           <p className="text-gray-900 mb-6">
-            Let us know anything you want to ask. We'll get back to you with a detailed answer.
+            Let us know anything you want to ask. We&apos;ll get back to you with a detailed answer.
           </p>
           <textarea
             rows={4}
